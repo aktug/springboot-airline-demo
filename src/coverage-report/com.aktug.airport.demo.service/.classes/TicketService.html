@@ -1,0 +1,195 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TicketService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.aktug.airport.demo.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TicketService (com.aktug.airport.demo.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TicketService</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (24/ 36)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$4Su4hAeE</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$6tBTIcyV</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$8mpXWkoK</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$LlK8Iw6B</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$OrSmIk8j</td>
+  </tr>
+  <tr>
+    <td class="name">TicketService$MockitoMock$157614319$auxiliary$WulZnSIm</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (24/ 36)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.aktug.airport.demo.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.aktug.airport.demo.exception.ResourceNotFoundException;
+<i>5</i>&nbsp;import com.aktug.airport.demo.model.Flight;
+<i>6</i>&nbsp;import com.aktug.airport.demo.model.Ticket;
+<i>7</i>&nbsp;import com.aktug.airport.demo.repository.FlightRepository;
+<i>8</i>&nbsp;import com.aktug.airport.demo.repository.TicketRepository;
+<i>9</i>&nbsp;import org.apache.commons.lang3.RandomStringUtils;
+<i>10</i>&nbsp;import org.springframework.stereotype.Service;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;@Service
+<i>13</i>&nbsp;public class TicketService {
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private final TicketRepository repository;
+<i>16</i>&nbsp;    private final FlightRepository flightRepository;
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    public TicketService(TicketRepository repository, FlightRepository flightRepository) {</b>
+<b class="fc"><i>19</i>&nbsp;        this.repository = repository;</b>
+<b class="fc"><i>20</i>&nbsp;        this.flightRepository = flightRepository;</b>
+<b class="fc"><i>21</i>&nbsp;    }</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    private String generateFlightNo() {
+<b class="fc"><i>24</i>&nbsp;        String randomFlightNo = RandomStringUtils.random(8, true, false).toUpperCase();</b>
+<b class="fc"><i>25</i>&nbsp;        if (repository.countTicketByTicketNo(randomFlightNo) &gt; 0) {</b>
+<b class="nc"><i>26</i>&nbsp;            return generateFlightNo();</b>
+<i>27</i>&nbsp;        }
+<b class="fc"><i>28</i>&nbsp;        return randomFlightNo;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    public Ticket buy(Long flightId) {
+<b class="fc"><i>32</i>&nbsp;        Flight flight = flightRepository.findById(flightId).orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Flight not found&quot;));</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;        int flightPassengerCnt = repository.countTicketByFlightIdAndIsCanceledIsFalse(flightId);</b>
+<b class="fc"><i>35</i>&nbsp;        if (flight.getQuota() &lt;= flightPassengerCnt) {</b>
+<b class="nc"><i>36</i>&nbsp;            throw new ResourceNotFoundException(&quot;Flight is Full.&quot;);</b>
+<i>37</i>&nbsp;        }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;
+<b class="fc"><i>40</i>&nbsp;        Ticket ticket = new Ticket();</b>
+<b class="fc"><i>41</i>&nbsp;        ticket.setFlight(flight);</b>
+<b class="fc"><i>42</i>&nbsp;        ticket.setTicketPrice(flight.getCurrentPrice());</b>
+<b class="fc"><i>43</i>&nbsp;        ticket.setTicketNo(generateFlightNo());</b>
+<i>44</i>&nbsp;
+<b class="fc"><i>45</i>&nbsp;        repository.save(ticket);</b>
+<i>46</i>&nbsp;
+<b class="fc"><i>47</i>&nbsp;        int passengerLoad = 100 * flightPassengerCnt / flight.getQuota();</b>
+<b class="fc"><i>48</i>&nbsp;        if (passengerLoad % 10 == 0) {</b>
+<b class="fc"><i>49</i>&nbsp;            flight.setCurrentPrice((long) (flight.getCurrentPrice() * 1.1));</b>
+<b class="fc"><i>50</i>&nbsp;            flightRepository.save(flight);</b>
+<i>51</i>&nbsp;        }
+<i>52</i>&nbsp;
+<b class="fc"><i>53</i>&nbsp;        return ticket;</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    public Ticket save(Ticket entity) {
+<b class="nc"><i>58</i>&nbsp;        return repository.save(entity);</b>
+<i>59</i>&nbsp;    }
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;    public Ticket cancel(String ticketNo) {
+<b class="fc"><i>62</i>&nbsp;        Ticket ticket = repository.getTicketByTicketNo(ticketNo);</b>
+<b class="fc"><i>63</i>&nbsp;        if (ticket == null) {</b>
+<b class="fc"><i>64</i>&nbsp;            throw new ResourceNotFoundException(&quot;Ticket not found&quot;);</b>
+<i>65</i>&nbsp;        }
+<b class="nc"><i>66</i>&nbsp;        ticket.setIsCanceled(true);</b>
+<b class="nc"><i>67</i>&nbsp;        ticket = repository.save(ticket);</b>
+<i>68</i>&nbsp;
+<b class="nc"><i>69</i>&nbsp;        Flight flight = flightRepository.findById(ticket.getFlight().getId()).orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Flight not found&quot;));</b>
+<b class="nc"><i>70</i>&nbsp;        int flightPassengerCnt = repository.countTicketByFlightIdAndIsCanceledIsFalse(ticket.getFlight().getId());</b>
+<i>71</i>&nbsp;
+<b class="nc"><i>72</i>&nbsp;        int passengerLoad = 100 * flightPassengerCnt / flight.getQuota();</b>
+<b class="nc"><i>73</i>&nbsp;        if (passengerLoad % 10 == 0) {</b>
+<b class="nc"><i>74</i>&nbsp;            flight.setCurrentPrice((long) (flight.getCurrentPrice() * 0.9));</b>
+<b class="nc"><i>75</i>&nbsp;            flightRepository.save(flight);</b>
+<i>76</i>&nbsp;        }
+<i>77</i>&nbsp;
+<b class="nc"><i>78</i>&nbsp;        return ticket;</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;    public Ticket getTicketByTicketNo(String ticketNo) {
+<b class="fc"><i>82</i>&nbsp;        return repository.getTicketByTicketNo(ticketNo);</b>
+<i>83</i>&nbsp;    }
+<i>84</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-12-06 12:02</div>
+</div>
+</body>
+</html>

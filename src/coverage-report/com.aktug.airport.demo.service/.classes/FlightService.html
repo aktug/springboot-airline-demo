@@ -1,0 +1,146 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: FlightService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.aktug.airport.demo.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: FlightService (com.aktug.airport.demo.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">FlightService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/ 9)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383</td>
+  </tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383$auxiliary$cPc7NlAR</td>
+  </tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383$auxiliary$CqStOzUe</td>
+  </tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383$auxiliary$Q17tmqj1</td>
+  </tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383$auxiliary$R2f4MIUH</td>
+  </tr>
+  <tr>
+    <td class="name">FlightService$MockitoMock$1461984383$auxiliary$VT86Dt0o</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/ 9)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.aktug.airport.demo.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.aktug.airport.demo.model.Flight;
+<i>5</i>&nbsp;import com.aktug.airport.demo.repository.FlightRepository;
+<i>6</i>&nbsp;import org.springframework.stereotype.Service;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.util.ArrayList;
+<i>9</i>&nbsp;import java.util.List;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;@Service
+<i>12</i>&nbsp;public class FlightService {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    private final FlightRepository repository;
+<i>15</i>&nbsp;
+<b class="fc"><i>16</i>&nbsp;    public FlightService(FlightRepository repository) {</b>
+<b class="fc"><i>17</i>&nbsp;        this.repository = repository;</b>
+<b class="fc"><i>18</i>&nbsp;    }</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public List&lt;Flight&gt; findAll() {
+<b class="fc"><i>22</i>&nbsp;        List&lt;Flight&gt; airportList = repository.findAll();</b>
+<i>23</i>&nbsp;
+<b class="fc"><i>24</i>&nbsp;        if (airportList.size() &gt; 0) {</b>
+<b class="fc"><i>25</i>&nbsp;            return airportList;</b>
+<i>26</i>&nbsp;        } else {
+<b class="nc"><i>27</i>&nbsp;            return new ArrayList&lt;Flight&gt;();</b>
+<i>28</i>&nbsp;        }
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    public Flight save(Flight entity) {
+<b class="fc"><i>32</i>&nbsp;        return repository.save(entity);</b>
+<i>33</i>&nbsp;    }
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    public List&lt;Flight&gt; findAirportByNameContains(String s) {
+<b class="fc"><i>36</i>&nbsp;        return repository.findFlightByAirlineNameContainsIgnoreCase(s);</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-12-06 12:02</div>
+</div>
+</body>
+</html>
