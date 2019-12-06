@@ -1,0 +1,1315 @@
+{
+	"info": {
+		"_postman_id": "fc122587-08e7-476b-b833-1fe5c4655e8e",
+		"name": "SpringBootDocker-AirlineDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Airlines",
+			"item": [
+				{
+					"name": "Airline - create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"TEST\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airlines/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airlines",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airline - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"TEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airlines/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airlines",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:40:01 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"name\": \"TEST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Airline - getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"TEST\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airlines/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airlines",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airline - getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"TEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airlines/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airlines",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:40:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Test-Airline#1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Test-Airline#2\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"TEST\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"TEST\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Airline - search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"TEST\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airlines/?search=TEST",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airlines",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "TEST"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airline - search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"TEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airlines/?search=TEST",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airlines",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "TEST"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:40:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Test-Airline#1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Test-Airline#2\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"TEST\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"TEST\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Airports",
+			"item": [
+				{
+					"name": "Airport - getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airports/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airports",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airport - getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airports/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airports",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:40:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Test-Airport#1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Test-Airport#2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Airport - search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airports/?search=TEST",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airports",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "TEST"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airport - search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airports/?search=TEST",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airports",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "TEST"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:41:10 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Test-Airport#1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Test-Airport#2\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"TEST\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Airport - create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"TEST\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/airports/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"airports",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Airport - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"TEST\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/airports/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"airports",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:40:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"TEST\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Routes",
+			"item": [
+				{
+					"name": "Route - create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": {\n        \"id\": 1\n    },\n    \"to\": {\n        \"id\": 2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/routes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Route - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": {\n        \"id\": 1\n    },\n    \"to\": {\n        \"id\": 2\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/routes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"routes",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:41:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"from\": {\n        \"id\": 1,\n        \"name\": null\n    },\n    \"to\": {\n        \"id\": 2,\n        \"name\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Route - getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/routes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Route - getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/routes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"routes",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:41:52 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"from\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        },\n        \"to\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Route - search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/routes/?search=Airport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"routes",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Airport"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Route - search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/routes/?search=Airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"routes",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Airport"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:42:03 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"from\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        },\n        \"to\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"from\": {\n            \"id\": 1,\n            \"name\": \"Test-Airport#1\"\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": \"Test-Airport#2\"\n        }\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Flights",
+			"item": [
+				{
+					"name": "Flight - getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/flights/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"flights",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Flight - getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/flights/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"flights",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:42:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 50,\n        \"route\": {\n            \"id\": 2,\n            \"from\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            },\n            \"to\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            }\n        },\n        \"currentPrice\": 100,\n        \"date\": \"2019-12-05T10:00:00.000+0000\"\n    },\n    {\n        \"id\": 3,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 3,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 50,\n        \"date\": \"2019-12-06T01:16:00.000+0000\"\n    },\n    {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 1,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 49,\n        \"date\": \"2019-12-05T09:00:00.000+0000\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Flight - search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/flights/?search=test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"flights",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Flight - search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/flights/?search=test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"flights",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "test"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:42:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 50,\n        \"route\": {\n            \"id\": 2,\n            \"from\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            },\n            \"to\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            }\n        },\n        \"currentPrice\": 100,\n        \"date\": \"2019-12-05T10:00:00.000+0000\"\n    },\n    {\n        \"id\": 3,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 3,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 50,\n        \"date\": \"2019-12-06T01:16:00.000+0000\"\n    },\n    {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 1,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 49,\n        \"date\": \"2019-12-05T09:00:00.000+0000\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Flight - create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airline\": {\n        \"id\": 1\n    },\n    \"currentPrice\": 50,\n    \"date\": \"2019-12-06T01:16:00.0000\",\n    \"quota\": 10,\n    \"route\": {\n        \"from\": {\n            \"id\": 1\n        },\n        \"to\": {\n            \"id\": 2\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/flights/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"flights",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Flight - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"airline\": {\n        \"id\": 1\n    },\n    \"currentPrice\": 50,\n    \"date\": \"2019-12-06T01:16:00.0000\",\n    \"quota\": 10,\n    \"route\": {\n        \"from\": {\n            \"id\": 1\n        },\n        \"to\": {\n            \"id\": 2\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/flights/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"flights",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:42:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"airline\": {\n        \"id\": 1,\n        \"name\": null\n    },\n    \"quota\": 10,\n    \"route\": {\n        \"id\": 5,\n        \"from\": {\n            \"id\": 1,\n            \"name\": null\n        },\n        \"to\": {\n            \"id\": 2,\n            \"name\": null\n        }\n    },\n    \"currentPrice\": 50,\n    \"date\": \"2019-12-06T01:16:00.000+0000\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Ticket - Buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tickets/buy/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tickets",
+								"buy",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ticket - Buy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/buy/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"buy",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:42:55 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"ticketNo\": \"EJSVJPRS\",\n    \"flight\": {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 1,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 53,\n        \"date\": \"2019-12-05T09:00:00.000+0000\"\n    },\n    \"ticketPrice\": 49,\n    \"isCanceled\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Ticket - Search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tickets/?search=VOYLZMCA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tickets",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "VOYLZMCA"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ticket - Search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/?search=VOYLZMCA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "VOYLZMCA"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:43:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"ticketNo\": \"VOYLZMCA\",\n    \"flight\": {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 1,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 53,\n        \"date\": \"2019-12-05T09:00:00.000+0000\"\n    },\n    \"ticketPrice\": 50,\n    \"isCanceled\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Ticket - Cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tickets/cancel/VOYLZMCA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tickets",
+								"cancel",
+								"VOYLZMCA"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ticket - Cancel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/cancel/VOYLZMCA",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"cancel",
+										"VOYLZMCA"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2019 01:43:09 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"ticketNo\": \"VOYLZMCA\",\n    \"flight\": {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"Test-Airline#1\"\n        },\n        \"quota\": 10,\n        \"route\": {\n            \"id\": 1,\n            \"from\": {\n                \"id\": 1,\n                \"name\": \"Test-Airport#1\"\n            },\n            \"to\": {\n                \"id\": 2,\n                \"name\": \"Test-Airport#2\"\n            }\n        },\n        \"currentPrice\": 47,\n        \"date\": \"2019-12-05T09:00:00.000+0000\"\n    },\n    \"ticketPrice\": 50,\n    \"isCanceled\": true\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
